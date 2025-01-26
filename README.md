@@ -5,16 +5,31 @@
 ## ✨ 特性
 
 -  处理弹弹play API的签名认证
--  支持Vercel一键部署
+-  支持Cloudflare Pages部署
 
 ## 🚀 快速开始
 
-### Vercel部署
+### Cloudflare Pages部署
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/ktl-dd)
+1. 克隆仓库
+```bash
+git clone https://github.com/yourusername/ktl-dd.git
+```
 
-1. 点击上方按钮一键部署到Vercel
-2. 部署完成后，你将获得一个URL：`https://your-project.vercel.app`
+2. 安装依赖
+```bash
+npm install
+```
+
+3. 本地开发
+```bash
+npm run dev
+```
+
+4. 部署到Cloudflare Pages
+```bash
+npm run deploy
+```
 
 ### 本地开发
 
@@ -33,7 +48,7 @@ npm run dev
 
 ```javascript
 // 搜索动画
-fetch('https://your-project.vercel.app/api/v2/search/episodes?anime=进击的巨人')
+fetch('https://your-project.pages.dev/api/v2/search/episodes?anime=进击的巨人')
   .then(res => res.json())
   .then(console.log);
 ```
@@ -62,9 +77,8 @@ PORT=3000 # 本地开发端口
 
 ## 📦 项目依赖
 
-- `express`: Web服务框架
-- `axios`: HTTP客户端
-- `cors`: 跨域资源共享中间件
+- `typescript`: TypeScript编译器
+- `wrangler`: Cloudflare Workers CLI
 
 ## 🔧 技术要求
 
