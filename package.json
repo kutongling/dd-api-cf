@@ -1,0 +1,17 @@
+{
+  "name": "ktl-dd",
+  "version": "1.0.0",
+  "description": "弹弹play API 代理",
+  "main": "worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

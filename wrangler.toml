@@ -1,0 +1,7 @@
+name = "dd-api-cf"
+main = "worker.js"
+compatibility_date = "2023-01-01"
+
+[vars]
+DANDAN_APP_ID = "s8zi9cvbw9"
+DANDAN_APP_SECRET = "24QkxXdVGF4k3RIVPHDNIbsUY4GYPtxF"
