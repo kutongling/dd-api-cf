@@ -6,6 +6,8 @@ export interface Env {
   DANDAN_APP_SECRET: string;
 }
 
-addEventListener('fetch', ((event: FetchEvent) => {
-  event.respondWith(handleRequest(event.request));
-}) as EventListener);
+export default {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    return handleRequest(request, env);
+  }
+};

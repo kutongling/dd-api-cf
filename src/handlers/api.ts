@@ -1,11 +1,9 @@
 import { generateSignature } from '../utils/signature';
-
-declare const DANDAN_APP_ID: string;
-declare const DANDAN_APP_SECRET: string;
+import type { Env } from '../index';
 
 const API_BASE = 'https://api.dandanplay.net';
 
-export async function handleRequest(request: Request): Promise<Response> {
+export async function handleRequest(request: Request, env: Env): Promise<Response> {
   // 处理 CORS 预检请求
   if (request.method === 'OPTIONS') {
     return new Response(null, {
@@ -35,16 +33,16 @@ export async function handleRequest(request: Request): Promise<Response> {
     // 生成签名
     const timestamp = Math.floor(Date.now() / 1000);
     const signature = await generateSignature(
-      DANDAN_APP_ID,
+      env.DANDAN_APP_ID,
       timestamp,
       apiPath,
-      DANDAN_APP_SECRET
+      env.DANDAN_APP_SECRET
     );
 
     // 发送请求
     const response = await fetch(targetUrl.toString(), {
       headers: {
-        'X-AppId': DANDAN_APP_ID,
+        'X-AppId': env.DANDAN_APP_ID,
         'X-Timestamp': timestamp.toString(),
         'X-Signature': signature,
         'Accept': 'application/json'
