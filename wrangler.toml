@@ -1,0 +1,20 @@
+name = "ktl-api-cf"
+main = "src/index.ts"
+compatibility_date = "2025-01-26"
+
+[vars]
+# 这里的值会被实际的环境变量覆盖
+DANDAN_APP_ID = ""
+DANDAN_APP_SECRET = ""
+
+[observability.logs]
+enabled = true
+level = "debug"
+
+[dev]
+port = 8787
+local_protocol = "http"
+
+
+
+
