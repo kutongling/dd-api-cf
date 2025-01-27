@@ -1,4 +1,4 @@
-# ktl-api-cf
+# dd-api-cf
 
 这是一个基于 Cloudflare Workers 的 API 代理服务,用于转发和处理 DanDanPlay API 的请求。
 
