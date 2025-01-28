@@ -1,4 +1,4 @@
-name = "ktl-api-cf"
+name = "name"
 main = "src/index.ts"
 compatibility_date = "2025-01-26"
 
